@@ -12,7 +12,7 @@ import org.springframework.stereotype.Service;
 public class LetterService {
     private final LetterRepository letterRepository;
 
-    public LetterResponseDto sendLetter(LetterRequestDto requestDto) {
+    public LetterResponseDto send(LetterRequestDto requestDto) {
         Letter letter = new Letter(requestDto);
         letterRepository.save(letter);
         return new LetterResponseDto(letter);
