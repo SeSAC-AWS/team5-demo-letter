@@ -14,7 +14,7 @@ public class LetterController {
     private final LetterService letterService;
 
     @PostMapping("/letters")
-    public ResponseEntity<LetterResponseDto> purchaseItem(@RequestBody LetterRequestDto requestDto) {
+    public ResponseEntity<LetterResponseDto> sendLetter(@RequestBody LetterRequestDto requestDto) {
         LetterResponseDto responseDto = letterService.sendLetter(requestDto);
         return ResponseEntity.ok(responseDto);
     }
