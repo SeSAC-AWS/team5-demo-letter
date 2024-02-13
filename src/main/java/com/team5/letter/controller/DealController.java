@@ -1,6 +1,7 @@
 package com.team5.letter.controller;
 
 
+import com.team5.letter.dto.ApiResponseDto;
 import com.team5.letter.dto.DealRequestDto;
 import com.team5.letter.dto.DealResponseDto;
 import com.team5.letter.service.DealService;
@@ -17,6 +18,12 @@ import java.util.List;
 @RequiredArgsConstructor
 public class DealController {
     private final DealService dealService;
+
+    @GetMapping("/")
+    public ResponseEntity<ApiResponseDto> home() {
+        ApiResponseDto responseDto = new ApiResponseDto("check", 200);
+        return ResponseEntity.ok(responseDto);
+    }
 
     @PostMapping("/deals")
     public ResponseEntity<DealResponseDto> create(@RequestBody DealRequestDto requestDto) {
