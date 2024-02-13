@@ -19,7 +19,7 @@ public class DealController {
     private final DealService dealService;
 
     @PostMapping("/deals")
-    public ResponseEntity<DealResponseDto> send(@RequestBody DealRequestDto requestDto) {
+    public ResponseEntity<DealResponseDto> create(@RequestBody DealRequestDto requestDto) {
         DealResponseDto responseDto = dealService.create(requestDto);
         return ResponseEntity.ok(responseDto);
     }
